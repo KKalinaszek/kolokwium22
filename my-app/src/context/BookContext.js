@@ -1,5 +1,4 @@
 import React, { useReducer, useState, useEffect } from "react";
-import axios from 'axios';
 
 const initialState = {
   books: [],
@@ -15,6 +14,8 @@ function bookReducer(state, action) {
         ...state,
         books: state.books.filter((book) => book.id !== action.payload),
       };
+    case "INITIAL_LOAD":
+      return { ...state, books: action.payload, isLoading: false };
     default:
       return state;
   }
@@ -27,9 +28,10 @@ export const BookProvider = ({ children }) => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    axios.get('https://inf.ug.edu.pl/~mmiotk/books3.json')
-      .then(response => {
-        dispatch({ type: "INITIAL_LOAD", payload: response.data });
+    fetch('https://inf.ug.edu.pl/~mmiotk/books3.json')
+      .then(response => response.json())
+      .then(data => {
+        dispatch({ type: "INITIAL_LOAD", payload: data });
       })
       .catch(err => console.log(err));
   }, []);

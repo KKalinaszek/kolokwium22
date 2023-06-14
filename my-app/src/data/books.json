@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "title": "Władca Pierścieni",
+        "author": "J.R.R. Tolkien",
+        "year": 1954,
+        "available": true
+    },
+    {
+        "id": 2,
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "year": 1965,
+        "available": false
+    },
+    {
+        "id": 3,
+        "title": "1984",
+        "author": "George Orwell",
+        "year": 1949,
+        "available": true
+    },
+    {
+        "id": 4,
+        "title": "Rok 1984",
+        "author": "George Orwell",
+        "year": 1949,
+        "available": false
+    },
+    {
+        "id": 5,
+        "title": "Droga Królów",
+        "author": "Brandon Sanderson",
+        "year": 2010,
+        "available": true
+    },
+    {
+        "id": 6,
+        "title": "Zamek z piasku, który runął",
+        "author": "Stieg Larsson",
+        "year": 2007,
+        "available": false
+    },
+    {
+        "id": 7,
+        "title": "Dziewczyna, która igrała z ogniem",
+        "author": "Stieg Larsson",
+        "year": 2006,
+        "available": true
+    },
+    {
+        "id": 8,
+        "title": "Mężczyźni, którzy nienawidzą kobiet",
+        "author": "Stieg Larsson",
+        "year": 2005,
+        "available": false
+    },
+    {
+        "id": 9,
+        "title": "Cienie Śródziemia",
+        "author": "Robert Foster",
+        "year": 1971,
+        "available": true
+    },
+    {
+        "id": 10,
+        "title": "Hobbit",
+        "author": "J.R.R. Tolkien",
+        "year": 1937,
+        "available": false
+    }
+]

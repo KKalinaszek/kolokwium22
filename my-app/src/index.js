@@ -8,6 +8,9 @@ import BookStats from "./components/BookStats";
 function App() {
   return (
     <BookProvider>
+      <header>
+        <h1>Aplikacja Biblioteki</h1>
+      </header>
       <BookForm />
       <BookList />
       <BookStats />

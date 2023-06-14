@@ -1,4 +1,5 @@
 import React, { useReducer, useState, useEffect } from "react";
+import booksData from '../data/books.json';
 
 const initialState = {
   books: [],
@@ -28,12 +29,22 @@ export const BookProvider = ({ children }) => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch('https://inf.ug.edu.pl/~mmiotk/books3.json')
-      .then(response => response.json())
-      .then(data => {
-        dispatch({ type: "INITIAL_LOAD", payload: data });
-      })
-      .catch(err => console.log(err));
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://inf.ug.edu.pl/~mmiotk/books3.json');
+        const data = await response.json();
+        if (data && data.length > 0) {
+          dispatch({ type: "INITIAL_LOAD", payload: data });
+        } else {
+          throw new Error("Empty data from server");
+        }
+      } catch (error) {
+        console.log('Fetching data from server failed, loading local data');
+        dispatch({ type: "INITIAL_LOAD", payload: booksData });
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (

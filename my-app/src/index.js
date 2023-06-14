@@ -11,9 +11,9 @@ function App() {
       <header>
         <h1>Aplikacja Biblioteki</h1>
       </header>
+      <BookStats />
       <BookForm />
       <BookList />
-      <BookStats />
     </BookProvider>
   );
 }
